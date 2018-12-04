@@ -1,16 +1,16 @@
 <template>
-  <div class="home">
-  </div>
+    <div class="home">
+        <h1>dupa</h1>
+    </div>
 </template>
 
 <script>
 
-import Welcome from '@/components/Welcome.vue'
-
-export default {
-  name: 'home',
-  components: {
-      Welcome
-  }
-}
+    export default {
+        name: 'home'
+    }
 </script>
+
+<style lang="scss" scoped>
+
+</style>

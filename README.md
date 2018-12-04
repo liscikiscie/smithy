@@ -1,4 +1,4 @@
-# jakobsforge
+# smithy's
 
 ## Project setup
 ```
