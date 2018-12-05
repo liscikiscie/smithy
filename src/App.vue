@@ -21,9 +21,10 @@
                         name="stagger"
                         tag="ul"
                         class="navigation-list"
+                        v-if="navState"
                 >
                     <li v-for="route in this.$router.options.routes" :key="route.name">
-                        <router-link :to="route.path" v-if="navState">{{ route.name }}</router-link>
+                        <router-link :to="route.path" >{{ route.name }}</router-link>
                     </li>
                 </transition-group>
             </div>
