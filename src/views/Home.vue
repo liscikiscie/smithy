@@ -13,14 +13,19 @@
                 </p>
             </div>
         </div>
+        <div class="social-media-panel">
+            <a class="outer-links"
+               href="https://allegro.pl/oferta/hoker-barowy-obrotowy-stolek-profilowany-kuchenny-6645426037?fromVariant=6913254833"
+               target="_blank">
+                <font-awesome
+                        class="arrow-icon icons"
+                        icon="angle-double-right"
+                />
+            </a>
+        </div>
         <div class="cover-lightMask">
             <span class="letter-orange">S</span>
         </div>
-        <aside>
-            <div class="social-media-panel">
-
-            </div>
-        </aside>
     </div>
 </template>
 
@@ -31,7 +36,7 @@
         data() {
             return {
                 projectName: 'SMITHY',
-                projectMotto: 'WEB APP\'S NOT ONLY FOR YOU',
+                projectMotto: 'WEB APPS NOT ONLY FOR YOU',
                 goAhead: 'READ MORE'
 
             }
@@ -76,6 +81,27 @@
         background-size: cover;
         height: 100vh;
         width: 100vw;
+        position: relative;
+
+        .social-media-panel {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            cursor: default;
+            user-select: none;
+
+            .outer-links {
+                margin-right: 35px;
+                color: white;
+
+                .icons {
+                    font-size: 30px;
+
+                }
+            }
+        }
 
         .project-description {
             height: 100vh;
@@ -85,6 +111,7 @@
             margin-right: 685px;
             cursor: default;
             user-select: none;
+            z-index: 2;
 
             .description-wrapper {
                 display: flex;
@@ -116,8 +143,10 @@
                     font-family: Nunitoregular, sans-serif;
                     color: white;
                     z-index: 1;
-                    margin: 60px 0 0 250px;
+                    margin: 30px 0 0 250px;
+                    padding-top: 30px;
                     transition: text-shadow .3s;
+                    border-top: 2px solid $mainLightColor;
 
                     .arrow-icon {
                         margin-left: 15px;
@@ -130,6 +159,12 @@
                     }
                 }
             }
+        }
+
+        .social-media-panel {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
         }
     }
 
@@ -162,6 +197,5 @@
         color: #ff4200;
         opacity: .5;
     }
-
 
 </style>
