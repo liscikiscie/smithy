@@ -1,35 +1,39 @@
 <template>
     <div id="app">
-        <div class="logo">SMITHY</div>
-        <div class="nav-container">
-            <div class="nav-operators">
-                <font-awesome
-                        class="nav-icon hamburger-menu"
-                        icon="bars"
-                        v-if="navState===false"
-                        @click="toggleNav"
-                        key="open"/>
-                <font-awesome
-                        class="nav-icon closing-menu"
-                        icon="times"
-                        @click="toggleNav"
-                        v-else
-                        key="closed"/>
-            </div>
-            <div class="nav">
-                <transition-group
-                        name="stagger"
-                        tag="ul"
-                        class="navigation-list"
-                        v-if="navState"
-                >
-                    <li v-for="route in this.$router.options.routes" :key="route.name">
-                        <router-link :to="route.path" >{{ route.name }}</router-link>
-                    </li>
-                </transition-group>
-            </div>
-            <router-view/>
-        </div>
+        <header>
+            <div class="logo">SMITHY</div>
+            <nav>
+                <div class="nav-container">
+                    <div class="nav-operators">
+                        <font-awesome
+                                class="nav-icon hamburger-menu"
+                                icon="bars"
+                                v-if="navState===false"
+                                @click="toggleNav"
+                                key="open"/>
+                        <font-awesome
+                                class="nav-icon closing-menu"
+                                icon="times"
+                                @click="toggleNav"
+                                v-else
+                                key="closed"/>
+                    </div>
+                    <div class="nav">
+                        <transition-group
+                                name="stagger"
+                                tag="ul"
+                                class="navigation-list"
+                                v-if="navState"
+                        >
+                            <li v-for="route in this.$router.options.routes" :key="route.name">
+                                <router-link :to="route.path">{{ route.name }}</router-link>
+                            </li>
+                        </transition-group>
+                    </div>
+                    <router-view/>
+                </div>
+            </nav>
+        </header>
     </div>
 </template>
 
@@ -44,7 +48,7 @@
         methods: {
             toggleNav() {
                 this.navState = !this.navState;
-            },
+            }
             // beforeEnter( el ) {
             //     el.style.opacity = 0;
             //     el.style.height = 0;
@@ -70,7 +74,9 @@
         font-family: 'DeathStar', sans-serif;
         font-weight: bold;
         font-size: 42px;
-        color: $secondaryFontColor;
+        color: #ffffff;
+        cursor: default;
+        user-select: none;
     }
 
     .nav-container {
@@ -78,6 +84,7 @@
         display: flex;
         justify-content: flex-end;
         flex-flow: row;
+        user-select: none;
 
         .nav-operators {
             position: fixed;
