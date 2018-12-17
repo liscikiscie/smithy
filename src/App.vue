@@ -6,13 +6,13 @@
                 <div class="nav-container">
                     <div class="nav-operators">
                         <font-awesome
-                                class="nav-icon hamburger-menu"
+                                class="nav-icon hamburger"
                                 icon="bars"
                                 v-if="navState===false"
                                 @click="toggleNav"
                                 key="open"/>
                         <font-awesome
-                                class="nav-icon closing-menu"
+                                class="nav-icon closing"
                                 icon="times"
                                 @click="toggleNav"
                                 v-else
@@ -49,10 +49,6 @@
             toggleNav() {
                 this.navState = !this.navState;
             }
-            // beforeEnter( el ) {
-            //     el.style.opacity = 0;
-            //     el.style.height = 0;
-            // }
         }
     }
 </script>
@@ -77,6 +73,10 @@
         color: #ffffff;
         cursor: default;
         user-select: none;
+
+        @media screen and (min-width: 320px) {
+            font-size: 22px;
+        }
     }
 
     .nav-container {
@@ -92,6 +92,10 @@
             right: 28px;
             font-size: 26px;
             z-index: 100;
+
+            @media screen and (min-width: 320px) {
+                font-size: 22px;
+            }
 
             .nav-icon {
                 cursor: pointer;
@@ -124,22 +128,40 @@
 
         .nav {
             position: fixed;
+            top: 60px;
+            right: 0;
+            z-index: 100;
+
+            /*
+             position: fixed;
             top: 30px;
             right: 75px;
-            z-index: 100;
+            z-index: 100;*/
 
             .navigation-list {
                 display: flex;
                 justify-content: flex-end;
-                flex-direction: row;
+                flex-direction: column;
+
+                li {
+                    margin-top: 15px;
+                }
+
             }
 
             a {
                 font-weight: bold;
                 color: $secondaryFontColor;
-                font-size: 26px;
+                font-size: 15px;
                 text-decoration: none;
                 margin: 0 12px;
+
+                /*
+                        font-weight: bold;
+                color: $secondaryFontColor;
+                font-size: 26px;
+                text-decoration: none;
+                margin: 0 12px;*/
 
                 &.router-link-exact-active {
                     color: $mainLightColor;

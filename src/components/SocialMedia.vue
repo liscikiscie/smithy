@@ -1,10 +1,12 @@
 <template>
+    <div class="social-media-container">
 
+    </div>
 </template>
 
 <script>
     export default {
-        name: 'socialMedia'
+        name: 'SocialMedia'
     }
 </script>
 

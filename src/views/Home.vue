@@ -1,32 +1,53 @@
 <template>
-    <div class="home-container">
-        <div class="project-description">
-            <div class="description-wrapper">
-                <h1 class="project-name">{{ projectName }}</h1>
-                <h2 class="project-motto">{{ projectMotto }}</h2>
-                <p class="moveOn-link">
-                    {{ goAhead }}
-                    <font-awesome
-                            class="arrow-icon"
-                            icon="angle-double-right"
-                    />
-                </p>
+    <main>
+        <div class="home-container">
+            <div class="project-description">
+                <div class="description-wrapper">
+                    <h1 class="project-name">{{ projectName }}</h1>
+                    <h2 class="project-motto">{{ projectMotto }}</h2>
+                    <p class="moveOn-link">
+                        {{ goAhead }}
+                        <font-awesome
+                                class="arrow-icon"
+                                icon="angle-double-right"
+                        />
+                    </p>
+                </div>
+            </div>
+            <div class="cover-lightMask">
+                <span class="letter-orange">S</span>
             </div>
         </div>
-        <div class="social-media-panel">
-            <a class="outer-links"
-               href="https://allegro.pl/oferta/hoker-barowy-obrotowy-stolek-profilowany-kuchenny-6645426037?fromVariant=6913254833"
-               target="_blank">
-                <font-awesome
-                        class="arrow-icon icons"
-                        icon="angle-double-right"
-                />
-            </a>
-        </div>
-        <div class="cover-lightMask">
-            <span class="letter-orange">S</span>
-        </div>
-    </div>
+        <aside>
+            <ul class="social-media-container">
+                <li>
+                    <a href="https://www.facebook.com/Smithy-285340225458595/?modal=admin_todo_tour"
+                       target="_blank">
+                        <img src="../assets/fonts/facebook-box.svg"
+                             class="social-medial-icon"
+                             alt="facebook-link"/>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/lisci_kiscie"
+                       target="_blank">
+                        <img src="../assets/fonts/twitter-box.svg"
+                             class="social-medial-icon"
+                             alt="twitter-link"/>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/liscikiscie"
+                       target="_blank">
+                        <img src="../assets/fonts/github-box.svg"
+                             class="social-medial-icon"
+                             alt="github-link"
+                        />
+                    </a>
+                </li>
+            </ul>
+        </aside>
+    </main>
 </template>
 
 <script>
@@ -73,129 +94,189 @@
 
     }
 
-    .home-container {
-        background-image: url("../assets/images/header/city-bcg-photo.png");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;
-        height: 100vh;
-        width: 100vw;
+    main {
         position: relative;
 
-        .social-media-panel {
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            cursor: default;
-            user-select: none;
+        aside {
+            position: absolute;
+            bottom: 0px;
+            background-color: transparent;
+            width: 100%;
 
-            .outer-links {
-                margin-right: 35px;
-                color: white;
+            /*
+                        position: absolute;
+            top: 40%;
+            right: 32px;
+            background-color: transparent;
+            width: 30px;
+            height: 250px;
+            */
 
-                .icons {
-                    font-size: 30px;
+            .social-media-container {
+                height: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items:  center;
 
+                /*
+                           height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;*/
+
+                .social-medial-icon {
+                    width: 20px;
                 }
             }
         }
 
-        .project-description {
+
+        .home-container {
+            background-image: url("../assets/images/header/city-bcg-photo.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+
+            .project-description {
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: 300px;
+                cursor: default;
+                user-select: none;
+                z-index: 2;
+
+                /*@media screen and (max-width: 320px) {*/
+                    /*margin-right: 685px;*/
+                /*}*/
+
+                .description-wrapper {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    flex-flow: column wrap;
+
+                    .project-name {
+                        display: none;
+                        font-size: 22px;
+                        color: white;
+                        z-index: 1;
+                        font-family: DeathStar, sans-serif;
+                        letter-spacing: 20px;
+                        margin-left: 350px;
+
+                        /*@media screen and (max-width: 320px) {
+                        font-size: 22px;
+                        color: white;
+                        z-index: 1;
+                        font-family: DeathStar, sans-serif;
+                        letter-spacing: 45px;
+                        margin-left: 250px;
+                        /*}*/
+                    }
+
+                    .project-motto {
+                        width: 160px;
+                        font-size: 18px;
+                        color: $secondaryFontColor;
+                        z-index: 1;
+                        font-family: DeathStar, sans-serif;
+                        letter-spacing: 8px;
+                        margin: 20px 0 0 320px;
+
+                        /*
+                                font-size: 21px;
+                        color: $secondaryFontColor;
+                        z-index: 1;
+                        font-family: DeathStar, sans-serif;
+                        letter-spacing: 12px;
+                        margin: 20px 0 0 250px;
+
+                         */
+
+                    }
+
+                    .moveOn-link {
+                        font-size: 15px;
+                        font-family: Nunitoregular, sans-serif;
+                        color: white;
+                        z-index: 1;
+                        margin: 260px 0 0 320px;
+                        padding-top: 15px;
+                        transition: text-shadow .3s;
+                        border-top: 2px solid $mainLightColor;
+
+                        /**
+                               font-size: 18px;
+                        font-family: Nunitoregular, sans-serif;
+                        color: white;
+                        z-index: 1;
+                        margin: 30px 0 0 250px;
+                        padding-top: 30px;
+                        transition: text-shadow .3s;
+                        border-top: 2px solid $mainLightColor;
+                         */
+
+                        .arrow-icon {
+                            margin-left: 15px;
+                            color: $mainLightColor;
+                        }
+
+                        &:hover {
+                            text-shadow: 0 0 .65px #fff, 0 0 .65px #fff;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+
+            .social-media-panel {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+            }
+        }
+
+        .cover-lightMask {
+            opacity: .8;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100vw;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-right: 685px;
+            background-color: $mainDarkColor;
             cursor: default;
             user-select: none;
-            z-index: 2;
 
-            .description-wrapper {
-                display: flex;
-                justify-content: flex-start;
-                align-items: flex-start;
-                flex-flow: column wrap;
+            .letter-orange {
+                background: url("../assets/images/header/city-bcg-photo.png") -895px  -415px;
+                -webkit-text-fill-color: rgba(255, 66, 0, .5);
+                -webkit-background-clip: text;
+                font-size: 320px;
+                font-family: DeathStar, sans-serif;
 
-                .project-name {
-                    font-size: 72px;
-                    color: white;
-                    z-index: 1;
-                    font-family: DeathStar, sans-serif;
-                    letter-spacing: 45px;
-                    margin-left: 250px;
-                }
 
-                .project-motto {
-                    font-size: 21px;
-                    color: $secondaryFontColor;
-                    z-index: 1;
-                    font-family: DeathStar, sans-serif;
-                    letter-spacing: 12px;
-                    margin: 20px 0 0 250px;
+               /* @media screen and (min-width: 1920px) {
+                    background: url("../assets/images/header/city-bcg-photo.png") -743px  -155px;
+                }*/
 
-                }
-
-                .moveOn-link {
-                    font-size: 18px;
-                    font-family: Nunitoregular, sans-serif;
-                    color: white;
-                    z-index: 1;
-                    margin: 30px 0 0 250px;
-                    padding-top: 30px;
-                    transition: text-shadow .3s;
-                    border-top: 2px solid $mainLightColor;
-
-                    .arrow-icon {
-                        margin-left: 15px;
-                        color: $mainLightColor;
-                    }
-
-                    &:hover {
-                        text-shadow: 0 0 .65px #fff, 0 0 .65px #fff;
-                        cursor: pointer;
-                    }
-                }
             }
         }
 
-        .social-media-panel {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
+        .center-big-letter {
+            font-size: 720px;
+            color: #ff4200;
+            opacity: .5;
         }
-    }
-
-    .cover-lightMask {
-        opacity: .8;
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: $mainDarkColor;
-        cursor: default;
-        user-select: none;
-
-        .letter-orange {
-            background: url("../assets/images/header/city-bcg-photo.png") -743px  -155px;
-            -webkit-text-fill-color: rgba(255, 66, 0, .5);
-            -webkit-background-clip: text;
-            font-size: 850px;
-            font-family: DeathStar, sans-serif;
-
-        }
-    }
-
-    .center-big-letter {
-        font-size: 720px;
-        color: #ff4200;
-        opacity: .5;
     }
 
 </style>
