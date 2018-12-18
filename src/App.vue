@@ -171,12 +171,9 @@
                 text-decoration: none;
                 margin: 0 12px;
 
-                /*
-                        font-weight: bold;
-                color: $secondaryFontColor;
-                font-size: 26px;
-                text-decoration: none;
-                margin: 0 12px;*/
+                @media screen and (min-width: 767px) {
+                    font-size: 18px;
+                }
 
                 &.router-link-exact-active {
                     color: $mainLightColor;
