@@ -117,7 +117,7 @@
                 display: flex;
                 flex-direction: row;
                 justify-content: space-around;
-                align-items:  center;
+                align-items: center;
 
                 /*
                            height: 100%;
@@ -141,45 +141,54 @@
             height: 100vh;
             width: 100vw;
             position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
             .project-description {
-                height: 100%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                margin-right: 300px;
                 cursor: default;
                 user-select: none;
                 z-index: 2;
 
                 /*@media screen and (max-width: 320px) {*/
-                    /*margin-right: 685px;*/
+                /*margin-right: 685px;*/
                 /*}*/
 
                 .description-wrapper {
                     display: flex;
-                    justify-content: space-between;
-                    align-items: flex-start;
+                    /*justify-content: space-between;*/
+                    /*align-items: flex-start;*/
                     flex-flow: column wrap;
 
                     .project-name {
                         display: none;
-                        font-size: 22px;
-                        color: white;
-                        z-index: 1;
-                        font-family: DeathStar, sans-serif;
-                        letter-spacing: 20px;
-                        margin-left: 350px;
-
-                        /*@media screen and (max-width: 320px) {
-                        font-size: 22px;
-                        color: white;
-                        z-index: 1;
-                        font-family: DeathStar, sans-serif;
-                        letter-spacing: 45px;
-                        margin-left: 250px;
-                        /*}*/
                     }
+
+                    @media screen and (min-width: 767px) {
+
+                        .project-name {
+                            display: flex;
+                            font-size: 32px;
+                            color: white;
+                            z-index: 1;
+                            font-family: DeathStar, sans-serif;
+                            letter-spacing: 20px;
+                            margin: 85px 0 0 -100px;
+
+                            /*@media screen and (max-width: 1920px) {
+                            font-size: 22px;
+                            color: white;
+                            z-index: 1;
+                            font-family: DeathStar, sans-serif;
+                            letter-spacing: 45px;
+                            margin-left: 250px;
+                            }*/
+                        }
+                    }
+
 
                     .project-motto {
                         width: 160px;
@@ -188,7 +197,15 @@
                         z-index: 1;
                         font-family: DeathStar, sans-serif;
                         letter-spacing: 8px;
-                        margin: 20px 0 0 320px;
+
+                        @media screen and (min-width: 767px) {
+                            width: 160px;
+                            white-space: nowrap;
+                            margin: -100px;
+                        }
+
+
+                        /*margin: 20px 0 0 320px;*/
 
                         /*
                                 font-size: 21px;
@@ -207,10 +224,13 @@
                         font-family: Nunitoregular, sans-serif;
                         color: white;
                         z-index: 1;
-                        margin: 260px 0 0 320px;
                         padding-top: 15px;
                         transition: text-shadow .3s;
                         border-top: 2px solid $mainLightColor;
+
+                        @media screen and (max-width: 767px) {
+                            margin-top: 250px;
+                        }
 
                         /**
                                font-size: 18px;
@@ -257,17 +277,32 @@
             cursor: default;
             user-select: none;
 
+            @media screen and (min-width: 767px) {
+
+            }
+
             .letter-orange {
-                background: url("../assets/images/header/city-bcg-photo.png") -895px  -415px;
+                background-image: url("../assets/images/header/city-bcg-photo.png");
+                background-repeat: no-repeat;
+                background-position: 0  0;
+                background-size: 320px 568px;
                 -webkit-text-fill-color: rgba(255, 66, 0, .5);
                 -webkit-background-clip: text;
                 font-size: 320px;
                 font-family: DeathStar, sans-serif;
 
+                @media screen and (min-width: 767px) {
+                    font-size: 480px;
+                    background-image: url("../assets/images/header/city-bcg-photo.png");
+                    background-size: 768px 1024px;
+                    background-repeat: no-repeat;
+                    background-position: 0px 0px;
+                }
 
-               /* @media screen and (min-width: 1920px) {
-                    background: url("../assets/images/header/city-bcg-photo.png") -743px  -155px;
-                }*/
+
+                /* @media screen and (min-width: 1920px) {
+                     background: url("../assets/images/header/city-bcg-photo.png") -743px  -155px;
+                 }*/
 
             }
         }

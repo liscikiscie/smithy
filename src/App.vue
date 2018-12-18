@@ -69,13 +69,13 @@
         z-index: 100;
         font-family: 'DeathStar', sans-serif;
         font-weight: bold;
-        font-size: 42px;
+        font-size: 22px;
         color: #ffffff;
         cursor: default;
         user-select: none;
 
-        @media screen and (min-width: 320px) {
-            font-size: 22px;
+        @media screen and (min-width: 767px) {
+            font-size: 36px;
         }
     }
 
@@ -97,11 +97,16 @@
                 font-size: 22px;
             }
 
+            @media screen and (min-width: 767px) {
+                font-size: 28px;
+            }
+
             .nav-icon {
                 cursor: pointer;
                 padding: 5px;
                 color: $secondaryFontColor;
                 z-index: 100;
+
             }
 
             &:hover {
@@ -132,19 +137,29 @@
             right: 0;
             z-index: 100;
 
-            /*
-             position: fixed;
-            top: 30px;
-            right: 75px;
-            z-index: 100;*/
+            @media screen and (min-width: 767px) {
+                position: fixed;
+                top: 30px;
+                right: 75px;
+                z-index: 100;
+            }
+
 
             .navigation-list {
                 display: flex;
                 justify-content: flex-end;
                 flex-direction: column;
 
+                @media screen and (min-width: 767px) {
+                    flex-direction: row;
+                }
+
                 li {
                     margin-top: 15px;
+
+                    @media screen and (min-width: 767px) {
+                        margin-top: 3px;
+                    }
                 }
 
             }
